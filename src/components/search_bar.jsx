@@ -10,11 +10,6 @@ class SearchBar extends React.Component {
     };
   }
 
-  // async fetchCountries() {
-  // 	const response = await fetch("https://restcountries.eu/rest/v2/all");
-  // 	console.log(response);
-  // }
-
   handleChange(e) {
     e.preventDefault();
     this.setState({ code: e.currentTarget.value });
@@ -22,7 +17,6 @@ class SearchBar extends React.Component {
 
   handleFocus(e) {
     e.preventDefault();
-    console.log("Input Focused");
     document.getElementById("country-container").style.display = "block";
   }
 
@@ -45,6 +39,7 @@ class SearchBar extends React.Component {
           <input
             id="phone"
             type="tel"
+            autoComplete="off"
             value={code}
             onChange={this.handleChange.bind(this)}
             onFocus={this.handleFocus.bind(this)}

@@ -37,9 +37,6 @@ class CountrySearch extends React.Component {
     return this.state.countryNames.filter((country) =>
       country.name.toLowerCase().includes(this.state.searchName.toLowerCase())
     );
-    // this.state.countryNames.forEach(country => {
-    //   console.log(country);
-    // })
   };
 
   handleFocus = (e) => {
@@ -47,8 +44,11 @@ class CountrySearch extends React.Component {
     document.getElementById("countryDropdown").style.display = "block";
   };
 
+  resetSearch = () => {
+    this.setState({ searchName: "" });
+  };
+
   render() {
-    const { changeCountry } = this.props;
     return (
       <div className="dropdownInput">
         <input
@@ -64,6 +64,7 @@ class CountrySearch extends React.Component {
             countries={this.filterSearch()}
             changeCountry={this.handleChange.bind(this)}
             changeCode={this.props.changeCode}
+            resetSearch={this.resetSearch}
           />
         </div>
       </div>

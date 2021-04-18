@@ -37,18 +37,18 @@ class SearchBar extends React.Component {
     return (
       <div>
         {/* <h2>Search for a country</h2> */}
-				<div className="inputWrap">
-					<label htmlFor="phone">Phone</label>
-					<input
-						id="phone"
-						type="tel"
-						value={country}
-						onChange={this.handleChange.bind(this)}
-						onFocus={this.handleFocus.bind(this)}
-					/>
-				</div>
+        <div className="inputWrap">
+          <label htmlFor="phone">Phone</label>
+          <input
+            id="phone"
+            type="tel"
+            value={country}
+            onChange={this.handleChange.bind(this)}
+            onFocus={this.handleFocus.bind(this)}
+          />
+        </div>
 
-        <div id="country-container" >
+        <div id="country-container">
           <CountryContainer country={country} code={code} />
         </div>
       </div>

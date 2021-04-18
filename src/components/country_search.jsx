@@ -43,7 +43,10 @@ class CountrySearch extends React.Component {
           onChange={this.editSearch}
         />
         <div>
-          <CountryDropdown countries={this.filterSearch()} changeCountry={this.handleChange.bind(this)}/>
+          <CountryDropdown
+            countries={this.filterSearch()}
+            changeCountry={this.handleChange.bind(this)}
+          />
         </div>
       </div>
     );

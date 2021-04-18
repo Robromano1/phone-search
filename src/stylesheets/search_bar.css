@@ -27,3 +27,19 @@
 	border-radius: 3px;
 	background: none;
 }
+
+@media screen and (max-width: 1024px) {
+	#country-container {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	#country-container {
+		width: 95%;
+	}
+
+	#phone {
+		width: 385%;
+	}
+}

@@ -9,6 +9,8 @@ class CountryContainer extends React.Component {
   }
 
   handleChange = (newCountry) => {
+    // Set the state to the new country that was selected by the user in the
+    // child component
     this.setState({ country: newCountry });
   };
 

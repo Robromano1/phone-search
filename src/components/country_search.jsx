@@ -13,6 +13,8 @@ class CountrySearch extends React.Component {
   }
 
   componentDidMount() {
+    // Api call that fetches all the countries including their codes when this
+    // component mounts to the DOM.
     fetch("https://restcountries.eu/rest/v2/all")
       .then((res) => res.json())
       .then((data) =>
@@ -34,6 +36,7 @@ class CountrySearch extends React.Component {
   };
 
   filterSearch = () => {
+    // Filter search results based on user input
     return this.state.countryNames.filter((country) =>
       country.name.toLowerCase().includes(this.state.searchName.toLowerCase())
     );
@@ -45,6 +48,8 @@ class CountrySearch extends React.Component {
   };
 
   resetSearch = () => {
+    // resets the search name in state to clear the search input when a
+    // country is selected from the list
     this.setState({ searchName: "" });
   };
 

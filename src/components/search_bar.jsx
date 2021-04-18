@@ -17,15 +17,12 @@ class SearchBar extends React.Component {
 
   handleFocus(e) {
     e.preventDefault();
+    // Display country search box on input focus
     document.getElementById("country-container").style.display = "block";
   }
 
-  handleBlur(e) {
-    e.preventDefault();
-    document.getElementById("country-container").style.display = "none";
-  }
-
   handleCodeChange = (newCode) => {
+    // Change the code state in the initial input
     this.setState({ code: newCode });
   };
 
@@ -33,7 +30,6 @@ class SearchBar extends React.Component {
     const { code } = this.state;
     return (
       <div>
-        {/* <h2>Search for a country</h2> */}
         <div className="inputWrap">
           <label htmlFor="phone">Phone</label>
           <input

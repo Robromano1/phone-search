@@ -4,6 +4,10 @@
 	flex-direction: row;
 }
 
+.countryItem:hover {
+	cursor: pointer;
+}
+
 .countryItemName {
 	padding-right: 5px;
 }

@@ -18,6 +18,7 @@ class CountryDropdown extends React.Component {
             idx={idx}
             key={idx}
             changeCountry={this.handleChange}
+            changeCode={this.props.changeCode}
           />
         ))}
       </div>

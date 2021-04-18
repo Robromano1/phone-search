@@ -5,7 +5,7 @@ import "../stylesheets/country_dropdown.css";
 class CountryContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { country: "" };
+    this.state = { country: "United States (1)" };
   }
 
   handleChange = (newCountry) => {
@@ -18,7 +18,7 @@ class CountryContainer extends React.Component {
         <div className="countryName">
           <h3>{this.state.country}</h3>
         </div>
-        <CountrySearch changeCountry={this.handleChange} />
+        <CountrySearch changeCountry={this.handleChange} changeCode={this.props.changeCode}/>
       </div>
     );
   }

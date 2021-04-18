@@ -31,6 +31,10 @@ class SearchBar extends React.Component {
     document.getElementById("country-container").style.display = "none";
   }
 
+  handleCodeChange = (newCode) => {
+    this.setState({code: newCode});
+  }
+
   render() {
     const { code } = this.state;
     return (
@@ -48,7 +52,7 @@ class SearchBar extends React.Component {
         </div>
 
         <div id="country-container">
-          <CountryContainer code={code} />
+          <CountryContainer code={code} changeCode={this.handleCodeChange}/>
         </div>
       </div>
     );

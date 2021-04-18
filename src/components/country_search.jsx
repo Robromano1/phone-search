@@ -55,6 +55,7 @@ class CountrySearch extends React.Component {
           <CountryDropdown
             countries={this.filterSearch()}
             changeCountry={this.handleChange.bind(this)}
+            changeCode={this.props.changeCode}
           />
         </div>
       </div>

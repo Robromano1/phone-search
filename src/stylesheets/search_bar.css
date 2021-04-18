@@ -1,3 +1,10 @@
-.country-container {
+#country-container {
 	display: none;
+	border: 1px solid gray;
+	height: 300px;
+	width: 20%;
+	margin-top: 10px;
+	border-radius: 5px;
+	background-color: #ffffff;
+	overflow-y: scroll;
 }

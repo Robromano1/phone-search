@@ -1,5 +1,6 @@
-import React from 'react';
-import '../stylesheets/search_bar.css';
+import React from "react";
+import "../stylesheets/search_bar.css";
+import CountryContainer from "./country-container";
 
 class SearchBar extends React.Component {
   constructor() {
@@ -17,13 +18,18 @@ class SearchBar extends React.Component {
 
   handleChange(e) {
     e.preventDefault();
-    this.setState({ code: e.currentTarget.value });
+    this.setState({ country: e.currentTarget.value });
   }
 
   handleFocus(e) {
     e.preventDefault();
-    console.log('Input Focused');
-    // <CountryContainer />;
+    console.log("Input Focused");
+    document.getElementById("country-container").style.display = "block";
+  }
+
+  handleBlur(e) {
+    e.preventDefault();
+    document.getElementById("country-container").style.display = "none";
   }
 
   render() {
@@ -33,15 +39,13 @@ class SearchBar extends React.Component {
         <h2>Search for a country</h2>
         <input
           type="tel"
-          value={code}
+          value={country}
           onChange={this.handleChange.bind(this)}
           onFocus={this.handleFocus.bind(this)}
         />
-        {/* <h2>{country}</h2>
-				<Countries country={country}/> */}
-        <div className="country-container">
-          {/* <CountryContainer /> */}
-					<h2>Hello</h2>
+
+        <div id="country-container" onBlur={this.handleBlur.bind(this)}>
+          <CountryContainer country={country} code={code} />
         </div>
       </div>
     );

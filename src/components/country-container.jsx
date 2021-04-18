@@ -18,7 +18,10 @@ class CountryContainer extends React.Component {
         <div className="countryName">
           <h3>{this.state.country}</h3>
         </div>
-        <CountrySearch changeCountry={this.handleChange} changeCode={this.props.changeCode}/>
+        <CountrySearch
+          changeCountry={this.handleChange}
+          changeCode={this.props.changeCode}
+        />
       </div>
     );
   }

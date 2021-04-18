@@ -5,9 +5,10 @@ import "../stylesheets/country_dropdown.css";
 class CountryDropdownItem extends React.Component {
   handleClick = (e) => {
     const newCountry = e.target.innerHTML;
-    const newCode = '+' + this.props.code
+    const newCode = "+" + this.props.code;
     this.props.changeCountry(newCountry);
     this.props.changeCode(newCode);
+    document.getElementById("phone").focus();
   };
 
   render() {
@@ -15,9 +16,7 @@ class CountryDropdownItem extends React.Component {
     return (
       <ul>
         <li className="countryItem" key={idx} onClick={this.handleClick}>
-          <div className="countryItemName">
-            {country + ' '}({ code })
-          </div>
+          {country + " "}({code})
         </li>
       </ul>
     );

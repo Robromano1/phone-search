@@ -10,7 +10,7 @@ class CountryDropdown extends React.Component {
   render() {
     const { countries } = this.props;
     return (
-      <div className="countryWrapper">
+      <div id="dropdownContainer" className="countryWrapper">
         {countries.map((country, idx) => (
           <CountryDropdownItem
             country={country.name}

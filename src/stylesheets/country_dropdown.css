@@ -8,10 +8,6 @@
 	cursor: pointer;
 }
 
-.countryItemName {
-	padding-right: 5px;
-}
-
 .countryWrapper {
 	overflow-y: scroll;
 	height: 250px;

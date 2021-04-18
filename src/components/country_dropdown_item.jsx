@@ -4,16 +4,18 @@ import "../stylesheets/country_dropdown.css";
 
 class CountryDropdownItem extends React.Component {
   handleClick = (e) => {
-    const newCountry = e.currentTarget.innerHTML;
+    const newCountry = e.target.innerHTML;
     this.props.changeCountry(newCountry);
   };
 
   render() {
-    const { country, idx } = this.props;
+    const { country, code, idx } = this.props;
     return (
       <ul>
         <li className="countryItem" key={idx} onClick={this.handleClick}>
-          {country}
+          <div className="countryItemName">
+            {country + ' '}({ code })
+          </div>
         </li>
       </ul>
     );

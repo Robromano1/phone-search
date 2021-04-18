@@ -7,7 +7,6 @@ class SearchBar extends React.Component {
     super();
     this.state = {
       code: "+1",
-      country: "United States",
     };
   }
 
@@ -18,7 +17,7 @@ class SearchBar extends React.Component {
 
   handleChange(e) {
     e.preventDefault();
-    this.setState({ country: e.currentTarget.value });
+    this.setState({ code: e.currentTarget.value });
   }
 
   handleFocus(e) {
@@ -33,7 +32,7 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    const { country, code } = this.state;
+    const { code } = this.state;
     return (
       <div>
         {/* <h2>Search for a country</h2> */}
@@ -42,14 +41,14 @@ class SearchBar extends React.Component {
           <input
             id="phone"
             type="tel"
-            value={country}
+            value={code}
             onChange={this.handleChange.bind(this)}
             onFocus={this.handleFocus.bind(this)}
           />
         </div>
 
         <div id="country-container">
-          <CountryContainer country={country} code={code} />
+          <CountryContainer code={code} />
         </div>
       </div>
     );

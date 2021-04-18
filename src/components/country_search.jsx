@@ -15,7 +15,7 @@ class CountrySearch extends React.Component {
   componentDidMount() {
     fetch("https://restcountries.eu/rest/v2/all")
       .then((res) => res.json())
-      .then((data) => this.setState({ countryNames: data.map((d) => d.name) }));
+      .then((data) => this.setState({ countryNames: data.map((d) => ({name: d.name, code: d.callingCodes[0] }) ) }));
   }
 
   handleChange(newCountry) {
@@ -27,10 +27,18 @@ class CountrySearch extends React.Component {
   };
 
   filterSearch = () => {
-    return this.state.countryNames.filter((name) =>
-      name.toLowerCase().includes(this.state.searchName.toLowerCase())
+    return this.state.countryNames.filter((country) =>
+    country.name.toLowerCase().includes(this.state.searchName.toLowerCase())
     );
+    // this.state.countryNames.forEach(country => {
+    //   console.log(country);
+    // })
   };
+
+  handleFocus = (e) => {
+    e.preventDefault();
+    document.getElementById('countryDropdown').style.display = 'block';
+  }
 
   render() {
     const { changeCountry } = this.props;
@@ -41,8 +49,9 @@ class CountrySearch extends React.Component {
           placeholder="Search"
           value={this.state.searchName}
           onChange={this.editSearch}
+          onFocus={this.handleFocus}
         />
-        <div>
+        <div id="countryDropdown">
           <CountryDropdown
             countries={this.filterSearch()}
             changeCountry={this.handleChange.bind(this)}

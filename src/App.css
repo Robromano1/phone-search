@@ -6,3 +6,7 @@ html {
 body {
 	height: 100%;
 }
+
+.App {
+	padding-left: 20px;
+}

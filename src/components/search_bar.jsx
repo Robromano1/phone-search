@@ -36,13 +36,17 @@ class SearchBar extends React.Component {
     const { country, code } = this.state;
     return (
       <div>
-        <h2>Search for a country</h2>
-        <input
-          type="tel"
-          value={country}
-          onChange={this.handleChange.bind(this)}
-          onFocus={this.handleFocus.bind(this)}
-        />
+        {/* <h2>Search for a country</h2> */}
+				<div className="inputWrap">
+					<label for="phone">Phone</label>
+					<input
+						id="phone"
+						type="tel"
+						value={country}
+						onChange={this.handleChange.bind(this)}
+						onFocus={this.handleFocus.bind(this)}
+					/>
+				</div>
 
         <div id="country-container" onBlur={this.handleBlur.bind(this)}>
           <CountryContainer country={country} code={code} />

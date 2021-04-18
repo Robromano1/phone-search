@@ -5,6 +5,7 @@
 .countryWrapper {
 	overflow-y: scroll;
 	height: 200px;
+	border-top: 1px solid #dcdcdc;
 }
 
 .dropdownInput input {
@@ -12,4 +13,11 @@
 	padding: 20px;
 	border: none;
 	outline: none;
+}
+
+.countryName {
+	text-align: center;
+	margin-right: 5%;
+	width: 100%;
+	border-bottom: 1px solid #dcdcdc;
 }

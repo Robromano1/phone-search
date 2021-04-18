@@ -1,5 +1,5 @@
 import React from "react";
-import { CountryDropdown } from "./country_dropdown";
+import CountryDropdown from "./country_dropdown";
 import "../stylesheets/country_dropdown.css";
 
 class CountrySearch extends React.Component {
@@ -18,9 +18,7 @@ class CountrySearch extends React.Component {
       .then((data) => this.setState({ countryNames: data.map((d) => d.name) }));
   }
 
-  handleChange(e) {
-    e.preventDefault();
-    const newCountry = e.currentTarget.value;
+  handleChange(newCountry) {
     this.props.changeCountry(newCountry);
   }
 
@@ -45,7 +43,7 @@ class CountrySearch extends React.Component {
           onChange={this.editSearch}
         />
         <div>
-          <CountryDropdown countries={this.filterSearch()} />
+          <CountryDropdown countries={this.filterSearch()} changeCountry={this.handleChange.bind(this)}/>
         </div>
       </div>
     );

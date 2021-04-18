@@ -1,10 +1,11 @@
 import React from "react";
 import CountrySearch from "./country_search";
+import '../stylesheets/country_dropdown.css';
 
 class CountryContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { country: this.props.country };
+    this.state = { country: '' };
   }
 
   handleChange = (newCountry) => {
@@ -14,10 +15,10 @@ class CountryContainer extends React.Component {
   render() {
     return (
       <div id="country-box">
-        <div>
+        <div className="countryName">
           <h2>{this.state.country}</h2>
         </div>
-        <CountrySearch changeCountry={this.handleChange.bind(this)} />
+        <CountrySearch changeCountry={this.handleChange} />
       </div>
     );
   }

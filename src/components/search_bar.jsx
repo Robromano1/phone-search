@@ -38,7 +38,7 @@ class SearchBar extends React.Component {
       <div>
         {/* <h2>Search for a country</h2> */}
 				<div className="inputWrap">
-					<label for="phone">Phone</label>
+					<label htmlFor="phone">Phone</label>
 					<input
 						id="phone"
 						type="tel"
@@ -48,7 +48,7 @@ class SearchBar extends React.Component {
 					/>
 				</div>
 
-        <div id="country-container" onBlur={this.handleBlur.bind(this)}>
+        <div id="country-container" >
           <CountryContainer country={country} code={code} />
         </div>
       </div>
